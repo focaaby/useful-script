@@ -8,7 +8,7 @@ if [ -d $1 ]; then
     echo "Moving $1 to $dir"
     mv $1 $dir/$1 &&
     echo "Changing owner to $user" &&
-    chown $user:$user $dir/$1 &&
+    chown -R $user:$user $dir/$1 &&
     echo "Changing directory mode to 755..." &&
     find $dir/$1 -type d -exec chmod 755 {} \; &&
     echo "Changing files mode to 644..." &&
